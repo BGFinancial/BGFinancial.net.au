@@ -1,0 +1,440 @@
+<!-- collapse all     Ctrl + k + 0 -->
+<!-- expand all       Ctrl + k + j -->
+<!-- word wrap toggle Alt + z -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- SEO -->
+        <title>BG Financial Group</title>
+        <meta nme="description" content="BG Financial Group">
+        <!-- Use meta robots tags only when you want to restrict the way GOOGLE crawls a page; -->
+        <meta name="robots" content="index, follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- SEO -->
+
+    <!-- <link rel="icon" type="image/png" href="./media-partial/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="./media-partial/favicon.png"/> -->
+    <link rel="icon" type="image/png" href="./media-partial/logo.jpg"/>
+    <link rel="shortcut icon" type="image/png" href="./media-partial/logo.jpg"/>
+
+    <script type="text/javascript" src="./js/!main.js"></script>
+    <script type="text/javascript" src="./js/!main-deferred.js" defer></script>
+    <script type="text/javascript" src="./js/ticker-tape.js" defer></script>
+    <script type="text/javascript" src="./js/slideshow-with-background-image.js" defer></script>
+
+    <link rel="stylesheet" href="./css/!main.css" type="text/css">
+    <link rel="stylesheet" href="./css/ticker-tape.css" type="text/css">
+    <link rel="stylesheet" href="./css/slideshow-with-background-image.css" type="text/css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+    
+</head>
+<body onload="menuClicked('m-home')">
+
+<div class="site-content-wrapper">
+
+    <header id="header">
+        <table class="header-table">
+            <tr>
+                <td>
+                    <img class="logo-bgf" title="" alt="" src="./media-partial/logo.jpg">
+                </td>
+                <td>
+                    <div class="header-bgf-1">BG Financial Group</div>
+                    <div class="header-bgf-2">Chartered Accountants</div>
+                </td>
+            </tr>
+        </table>
+        <!-- <div class="header-table">
+            <div style="display:flex">
+                <img class="logo-bgf" title="" alt="" src="./media-partial/logo.jpg" height="80px">
+            </div>
+            <div style="display:flex;flex-direction: column;">
+                <span class="header-bgf-1">BG Financial Group</span>
+                <span class="header-bgf-2">Chartered Accountants</span>
+            </div>
+        </div> -->
+        <input id="nav-toggle" type="checkbox" class="nav-toggle">
+        <nav onmouseleave="menuClose();">
+            <ul>
+                <li id="m-home" data-page="page-01" onclick="menuClicked(this.id)"><a href="#">Home</a></li>
+                <!-- <li id="m-about-us" data-page="page-04" onclick="menuClicked(this.id)"><a href="#">About Us</a></li> -->
+                <li id="m-about-us" data-page="page-04" onclick="menuClicked(this.id)"><a href="#">Our Firm</a></li>
+                <li id="m-management-team" data-page="page-07" onclick="menuClicked(this.id)"><a href="#">Management Team</a></li>
+                <li id="m-services" class="services" data-page="page-02" xonclick="menuClicked(this.id)"><a href="#">Services</a>
+                    <ul>
+                        <li id="m-advisory" data-page="page-02-01" onclick="menuClicked(this.id)"><a href="#">Business advisory</a></li>
+                        <li id="m-tax-accounting" data-page="page-02-03" onclick="menuClicked(this.id)"><a href="#">Tax & accounting</a>
+                            <!-- <ul>
+                                <li id="tax-accounting" data-page="page-02-03-01" onclick="menuClicked(this.id)"><a href="#">one</a></li>
+                                <li id="tax-accounting" data-page="page-02-03-02" onclick="menuClicked(this.id)"><a href="#">two</a></li>
+                                <li id="tax-accounting" data-page="page-02-03-03" onclick="menuClicked(this.id)"><a href="#">three</a></li>
+                            </ul> -->
+                        </li>
+                        <li id="m-portfolio-smsf" data-page="page-02-04" onclick="menuClicked(this.id)"><a href="#">Portfolio services</a></li>
+                        <li id="m-audit-assurance" data-page="page-02-02" onclick="menuClicked(this.id)"><a href="#">Audit & assurance</a></li>
+                        <li id="m-virtual-cfo" data-page="page-02-05" onclick="menuClicked(this.id)"><a href="#">Virtual CFO</a></li>
+                    </ul>
+                </li>
+                <li id="m-industries" data-page="page-03" onclick="menuClicked(this.id)"><a href="#">Industries</a></li>
+                <li id="m-contact-us" data-page="page-05" onclick="menuClicked(this.id)"><a href="#">Contact Us</a></li>
+                <li id="m-ato-links" data-page="page-06" onclick="menuClicked(this.id)"><a href="#">ATO Resources</a></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span>&#9776;</span>
+        </label>
+    </header>
+    
+    <main>
+
+        <div class="main-div">
+            <div id="page-01" class="page navigable-item">
+                <section id="section-hero" class="section-hero">
+                    <div id="slideshow" class="slideshow">
+                        <div id="slide-background" class="slide-background"></div>
+                        <div id="text-animations" class="observed-section" style="display:none;">
+                        </div>
+                        <div id="slide-caption" class="slide-caption"></div>
+                    </div>
+                </section>
+                <section class="section-welcome">
+                    <p>We provide personalised accounting, tax and advisory services. We have set up many  different tax structures, including bare trust structures where borrowings are required in self-managed superfunds.</p>
+                    <p>Legal structures for small fund managers and smaller legal firms and medical professionals.</p>
+                    <p>Our range of services include but is not limited to: 
+                        <ul>
+                            <li>Preparation and lodgement of Income Tax returns,</li>
+                            <li>Income Tax advice,</li>
+                            <li>Estate Planning,</li>
+                            <li>Fringe Benefit Tax advice,</li>
+                            <li>GST advice and BAS returns,</li>
+                            <li>Payroll Tax,</li>
+                            <li>Capital Gains Tax,</li>
+                            <li>Rental Property and Superannuation advice.</li>
+                        </ul>
+                    </p>
+                </section>
+                <section class="section-hero-detail">
+                    <div class="section-hero-detail-text">
+                        <h2 class="section-hero-detail-text-content">Business Advisory</h2>
+                        <h4 class="section-hero-detail-text-content">We help our clients minimise their yearly tax obligations & protect their assets.</h4>
+                    </div>
+                    <img title="" alt="" src="./media-partial/service-advisory.jpg" class="hero-images-x-4 hero-image-left">
+                    <div class="section-hero-detail-text">
+                        <h4 class="section-hero-detail-text-content">We specialise in Tax Advice for high net worth clients.</h4>
+                        <h2 class="section-hero-detail-text-content">Tax & Accounting</h2>
+                    </div>
+                    <img title="" alt="" src="./media-partial/service-tax-and-accounting.jpg" class="hero-images-x-4 hero-image-right">
+                    <div class="section-hero-detail-text">
+                        <h2 class="section-hero-detail-text-content">Portfolio Services</h2>
+                        <h4 class="section-hero-detail-text-content">We provide Portfolio Reporting systems for SMSF and Equity portfolios online.</h4>
+                    </div>
+                    <img title="" alt="" src="./media-partial/service-portfolio.jpg" class="hero-images-x-4 hero-image-left">
+                    <div class="section-hero-detail-text">
+                        <h4 class="section-hero-detail-text-content">We have experience in different types of audits for all types of businesses.</h4>
+                        <h2 class="section-hero-detail-text-content">Audit & Assurance</h2>
+                    </div>
+                    <img title="" alt="" src="./media-partial/service-audit.jpg" class="hero-images-x-4 hero-image-right">
+                    <div class="section-hero-detail-text">
+                        <h4 class="section-hero-detail-text-content">We provide Virtual CFO Services tailored to your request provided by qualified experienced accountants.</h4>
+                        <h2 class="section-hero-detail-text-content">Virtual CFO</h2>
+                    </div>
+                    <img title="" alt="" src="./media-partial/service-virtual-cfo.jpg" class="hero-images-x-4 hero-image-right">
+                </section>
+            </div>
+            <div id="page-02" class="page">
+                <section class="section-services">
+
+                    <div id="page-02-01" class="page-02 page-02-01 navigable-item">
+                        <h2 class="hero-advisory">Business Advisory</h2>
+                        <h3>Business Consulting</h3>
+                        <p>We offer tax and wealth management support to boost personal wealth for high net worth individuals. We work with our clients to realise financial outcomes – from tax and investment strategies to techniques for using profits as income to maximize family wealth outside of their businesses.</p>
+                        <p>Minimise yearly tax obligations, protect and preserve your family wealth, asset protection, design growth-oriented tax strategies & accelerate debt reduction and elimination & maximise returns on investments. Implement retirement planning strategies by working with our financial advisors.</p>
+                    </div>
+                    <div id="page-02-02" class="page-02 page-02-02 navigable-item">
+                        <h2 class="hero-audit">Audit & Assurance</h2>
+                        <p>Our audit approach emphasis is on understanding the business, the owner and the balance sheet.</p>
+                        <p>We conduct various audits from Financial Reports to Self-Managed Super Funds.</p>
+                    <!-- </div> -->
+                    <!-- <div> -->
+                        <h3>Audits and Reviews of financial reports.</h3>
+                            <p>Provision of statutory audit services for clients requiring an audit under the Corporations Act 2001, or other relevant legislation. Our industry experience and exposure to different entity structures is very broad.</p>
+                        <h3>Internal Audits.</h3>
+                            <p>Provision of an internal audit function, either on a one-off or recurring basis, for organisations of all types.</p>
+                        <h3>Systems and controls reviews</h3>
+                            <p>Reviews of an entity’s financial and operating systems and controls, providing an independent assessment of the internal systems and controls. These reviews assist in risk management and corporate governance.</p>
+                        <h3>Agreed upon procedure reports.</h3>
+                            <p>Conducting procedures on specified financial information for a particular special purpose and then preparing a report based on these procedures.</p>
+                        <h3>Self-Managed Superannuation Funds.</h3>
+                            <p>Auditing self-managed superannuation funds in accordance with Australian Auditing Standards and superannuation legislation.</p>
+                        <h3>Other types of audits.</h3>
+                            <ul>
+                                <li>Trust accounts (solicitors and real estate agents)</li>
+                                <li>Grant aquittals</li>
+                                <li>Turnover audits</li>
+                                <li>Outgoings audits</li>
+                                <li>Strata plan audits</li>
+                            </ul>
+                            <br>
+                    </div>
+                    <div id="page-02-03" class="page-02 page-02-03 navigable-item">
+                        <h2 class="hero-tax-and-accounting">Taxation & Accounting</h2>
+                        <!-- <div> -->
+                            <h3>Taxation Services</h3>
+                            <p>Have you reached a savings or investment plateau, with little to no disposable income left to use as you please? Are you starting to feel like too much of your income and revenue goes towards taxes – on personal, business or investment income, on capital gains, on your superannuation, on goods and services – and a little more?</p>
+                            <p>Our priority is to provide you with an outcome that best suits your individual business needs. Whilst it is important to deliver practical business solutions, we also understand that the most meaningful advice is tailored to the environment in which you operate.</p>
+                        <!-- </div> -->
+                        <!-- <div> -->
+                            <h3>Accounting Services</h3>
+                            <p>Are you missing out on valuable tax deductions that are costing you thousands of dollars in tax return refunds each year?</p>
+                            <p>Making a mistake on your tax return could be costly. You could end up paying more tax than you have to and there are big penalties for lodging incorrect tax returns. Save yourself the time, stress and money.</p>
+                        <!-- </div> -->
+                        <!-- <div> -->
+                            <h3>Book-keeping Services</h3>
+                            <p>With extensive experience in preparing company accounts, we take care of your bookkeeping needs and also prepare your year-end accounts.</p>
+                            <p>This negates the need to have a separate bookkeeper and accountant. This means your year-end financials are completed promptly and by someone who is very hands-on and understands your business.</p>
+                        <!-- </div> -->
+                    </div>
+                    <div id="page-02-04" class="page-02 page-02-04 navigable-item">
+                        <h2 class="hero-portfolio">Superfunds Online</h2>
+                        <h3>"Class Super"</h3>
+                        <p>Take advantage of our specialist online reporting system for SMSF's. You can view individual member balances, investment values, cash accounts, contribution cap limits, pension withdrawal limits, asset allocation, asset strategy, and much more.</p>
+                    </div>
+                    <div id="page-02-05" class="page-02 page-02-05 navigable-item">
+                        <h2 class="hero-virtual-cfo">Virtual CFO</h2>
+                        <h3>"CFO Support"</h3>
+                        <p>Our Virtual CFO Service supports your business by providing management insights, management reporting, analysis, budgeting & forecasting to enhance your decision-making ability.</p>
+                    </div>
+        
+                </section>
+            </div>
+            <div id="page-03" class="page navigable-item">
+                <section class="section-industries">
+                    <h2>Our clients are involved in the following industries:-</h2>
+                    <ul>
+                        <li class="industry-pic industry-pic-banking">Banking & financial services<br>
+                        <!-- <img title="" alt="" src="./media-partial/industry-banking.jpg" class="industry-pic industry-pic-banking"> -->
+                        </li>
+                        <li class="industry-pic industry-pic-cyber-security">Cybersecurity<br>
+                        <!-- <img title="" alt="" src="./media-partial/industry-cyber-security.jpg" class="industry-pic industry-pic-cyber-security"> -->
+                        </li>
+                        <li class="industry-pic industry-pic-food">Food industry<br>
+                        <!-- <img title="" alt="" src="./media-partial/industry-food.jpg" class="industry-pic industry-pic-food"> -->
+                        </li>
+                        <li class="industry-pic industry-pic-legal-profession">Legal professionals<br>
+                        <!-- <img title="" alt="" src="./media-partial/industry-legal-profession.jpg" class="industry-pic industry-pic-legal-profession"> -->
+                        </li>
+                        <li class="industry-pic industry-pic-medical-profession">Medical professionals & businesses<br>
+                        <!-- <img title="" alt="" src="./media-partial/industry-medical-profession.jpg" class="industry-pic industry-pic-medical-profession"> -->
+                        </li>
+                        <li class="industry-pic industry-pic-transport-and-logistics">Transport & logistics<br>
+                        <!-- <img title="" alt="" src="./media-partial/industry-transport-and-logistics.jpg" class="industry-pic industry-pic-transport-and-logistics"> -->
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div id="page-04" class="page navigable-item">
+                <div style="display:flex;justify-content:center;gap:20px;margin-top:20px;margin-bottom:20px;">
+                    <!-- <div class="about-us-img-left"><img src="./media-partial/about-us-martin-place-1-bw.jpg" width="25%"></div> -->
+                    <!-- <div class="about-us-img-middle"><img src="./media-partial/about-us-88-pitt-street-bw.jpg" width="25%"></div> -->
+                    <!-- <div class="about-us-img-right"><img src="./media-partial/about-us-martin-place-2-bw.jpg" width="25%"></div> -->
+                    <img src="./media-partial/about-us-martin-place-1.jpg" class="about-us-img-left">
+                    <img src="./media-partial/about-us-88-pitt-street-2.jpg" class="about-us-img-middle">
+                    <!-- <img src="./media-partial/about-us-martin-place-2-bw.jpg" class="about-us-img-right"> -->
+                </div>
+                <section class="section-about-us">
+                    <!-- <div class="about-us-pic about-us-pic-about-us">About Us<br></div> -->
+                    <div class="section-about-us-div">
+                        <div class="about-us-pic about-us-pic-our-firm">Our Firm<br></div>
+                        <!-- <h2>Our Firm</h2> -->
+                        <p>BG Financial is a firm situated in the heart of the city with a diverse personal and business client base. We have several high profile clients covering most industry sectors. Our clients are situated throughout NSW and some are interstate and overseas.</p>
+                        <p>The staff are of a high calibre and are senior qualified professional accountants with several years’ experience. The size of our firm enables us to provide personalised Director attention to meet our clients’ needs. We are proactive in our approach and focus on providing value added services. We also work together with a network of specialist experts (tax lawyers, stockbrokers and other specialists) to assist our clients with more complex issues if required.</p>
+                        <p>Most of our clients are long standing ones and our relationship with them is a trusted one.</p>
+                    </div>
+                </section>
+            </div>
+            <div id="page-05" class="page navigable-item">
+                <section class="section-contact-us">
+                    <div class="section-contact-us-row">
+                        <div>
+                            <div class="section-contact-us-col">
+                                <h2>Contact Us</h2>
+                                <address>
+                                    <p><span class="material-symbols-outlined" >local_post_office</span><span style="color:var(--color-body)"><br>Suite 59, Level 11<br>88 Pitt Street,<br>Sydney NSW 2000</span></p>
+                                </address>
+                                <div>
+                                    <p><span class="material-icons">phone</span><br><a href="tel:+61292219393" style="color:var(--color-body)"><b>T </b>+61 02 9221 9393</a><br>
+                                    <span class="material-icons"></span><br><a href="tel:+61292219393" style="color:var(--color-body)"><b>F </b>+61 02 8076 3050</a><br>
+                                    <!-- <span class="material-icons"></span><br><a href="tel:+61292219393" style="color:var(--color-body)"><b>M </b>+61 04 6680 6819</a> -->
+                                </div>
+                                <div>
+                                    <p><span class="material-icons">mail</span><br><a href="mailto:info@bgfinancial.net.au" style="color:var(--color-body)">info@bgfinancial.net.au</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="google-map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.87993954404!2d151.20661901744378!3d-33.8669849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae403f53f0d5%3A0xc5f4332f6633d77f!2s88%20Pitt%20St%2C%20Sydney%20NSW%202000!5e0!3m2!1sen!2sau!4v1681869550104!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="page-06" class="page page-06 navigable-item">
+                <section class="section-ato-links">
+                    <div class="section-ato-links-background">
+                    </div>
+                    <div id="ato-links" class="ato-links">
+                        <ul><h2>Useful Links</h2>
+                            <li><a href="https://www.ato.gov.au/Rates/Individual-income-tax-rates/" title="Individual Income Tax Rates" target="_blank">Tax Tables</a></li>
+                            <li><a href="https://www.ato.gov.au/tax-professionals/prepare-and-lodge/due-dates/" title="Tax return due dates" target="_blank">Tax due dates</a></li>
+                            <li><a href="https://www.ato.gov.au/Individuals/Jobs-and-employment-types/Working-as-an-employee/Leaving-your-job/Employment-termination-payments/" title="Eligible Termination Payments" target="_blank">Termination Payments</a></li>
+                            <li><a href="https://www.ato.gov.au/Individuals/Deceased-estates/" title="Deceased Estates - ATO" target="_blank">Deceased Estates</a></li>
+                            <li><a href="https://www.ato.gov.au/Calculators-and-tools/Medicare-levy/" title="Medicare Levy calculator" target="_blank">Medicare Levy</a></li>
+                            <li><a href="https://www.ato.gov.au/Calculators-and-tools/" title="Calculators and tools" target="_blank">Calculators and tools</a></li>
+                            <li><a href="https://www.ato.gov.au/Forms/Searching-for-lost-super/" title="Find your lost Super" target="_blank">Find your lost Super</a></li>
+                            <li><a href="https://www.ato.gov.au/Individuals/Tax-file-number/" title="Tax File Numbers - ATO" target="_blank">Tax File Numbers</a></li>
+                            <li><a href="https://www.ato.gov.au/business/business-activity-statements-(bas)/" title="Business Activity Statements - ATO" target="_blank">BAS Reporting</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div id="page-07" class="page page-07 navigable-item">
+                <img src="./media-partial/page-07-background.jpg" class="page-07-background">
+                <section class="section-management-team">
+                    <!-- <div class="section-management-team-background"></div> -->
+                    <div>
+                        <div class="about-us-pic about-us-pic-management-team">Management Team<br></div>
+                        <!-- <h2>Management Team</h2> -->
+
+                        <h3>Felicia Jamieson (Director)<br>CA, BBus & Dip Financial Planning</h3>
+                        <p>Ms Felicia Jamieson is a highly experienced & qualified accountant who offers a high level of service. She has over 25 years’ extensive experience and held various senior roles in second Tier firms and a large listed company. Felicia’s experience encompassed the management of taxation issues for corporate listed funds, high  net worth individuals, deceased estates, goods and services tax (GST), self-managed super funds (SMSF), and manages an elite client base. Her many high-profile clients come to Felicia for specialist tax advice and high level tax planning.</p>
+                        <p>Felicia has extensive experience in undertaking due diligence work. She has taken on lead roles as tax advisor in the sale of businesses in excess of 40 million dollars. She has worked closely with private equity firms and the big 4 accounting firms acting for the sellers.</p>
+                        <p>Felicia is recognised for her succession planning skills. She works closely with her legal contacts in the set up of legal structures to ensure issues surrounding control and inter-generational wealth transfer within families are met. Felicia’s strong taxation skills enable her to advise on effective solutions that meet the needs of present and future generations of families. She also provides advice to her clients on the set up of bare trusts and borrowings within a self-managed superannuation fund. Felicia is a diligent advisor who builds strong relationships with her clients and delivers clear and concise tax solutions.</p>
+
+                        <div class="section-management-team-horizontal-line"></div>
+                        <h3>Stephen Kim (Associate Director)<br>CA, B.Com</h3>
+                        <!-- <p>Commencing his career in 2003, Stephen has over 15 years' experience as a senior tax manager, looking after high net wealth individuals in the banking and medical professions.</p>
+                        <p>Stephen has strong technical and compliance experience in Australian and IFRS reporting and regulatory requirements for both Private and Public Sector.</p>
+                        <p>Stephen has strong knowledge & experience in high level tax review and is passionate in what he does with strong experience in the following:-</p>
+                        <ul>
+                            <li>EOFY Tax Statement Program Delivery</li>
+                            <li>Tax Reviews for HNW unlisted investment managed funds (MIT's)</li>
+                        </ul> -->
+                        <p>Stephen is a qualified Chartered Accountant with more than 20 years’ experience. He is an Associate Director and key member of BG Financial Group. He specialises in administration and management of self-managed superannuation Funds (SMSFs). Stephen has a thorough understanding of superannuation strategies and the benefits of Self-Managed Superannuation Funds. Stephen’s attention to detail in this area in particular, ensures all clients are compliant in the technical and practical application of the SIS Act.</p>
+                        <p>Throughout his career, Stephen has worked extensively on complex taxation strategies and mechanics of business performance and management. He has focused on income tax, GST and Payroll tax issues. Stephen’s strong technical background is complimented by his professionalism, integrity and commitment to meeting the needs of his clients.</p>
+                        <p>He possesses an excellent ability to explore scenarios highlighting all taxation obstacles whilst ensuring asset protection. He has assisted clients with tax advice and implementation of strategies for dealing with real property purchases, limited recourse borrowing and financial assistance to purchase assets.</p>
+                        <p>As an Associate Director, Stephen is ready to collectively focus on and systematically work through adding value and insight to all services and strategies with our clients. Whilst maintaining quality assurance over all client work, he continually identifies risks and regularly provides an unbiased view of alternatives.</p>
+
+                        <div class="section-management-team-horizontal-line"></div>
+                        <h3>Railesh Chand - Senior Tax Manager<br>CA</h3>
+                        <p>Railesh (Raj) is a qualified Chartered accountant with over 20 years' in the accounting industry.</p>
+                        <p>Raj has had over 10 years' experience in a specialist tax team at a leading investment fund manager. He has proven tax project leadership experience in trusts and delivery of value adding client advice in order to manage & exceed stakeholder expectations.</p>
+                        <p>Raj has practical knowledge & experience in high level tax review of unlisted managed funds, EOFY tax statements and ownership of unit trust tax administration. Raj is passionate in what he does with specialties in the following:-</p>
+                        <ul>
+                            <li>Management/Financial Reporting & Tax Compliance</li>
+                            <li>Estates & DOD Tax Compliance </li>
+                            <li>Testamentary & Discretionary Trusts</li>
+                            <li>Non-Resident Withholding Tax Controls</li>
+                            <li>Hybrid Unit Trust Administration and Compliance</li>
+                            <li>EOFY Tax Statement Program Delivery</li>
+                            <li>Tax Reviews for HNW unlisted investment managed funds (MIT's)</li>
+                            <li>Native (Indigenous) Title Trusts Implementation Lead</li>
+                        </ul>
+
+                        <div class="section-management-team-horizontal-line"></div>
+                        <h3>Peter Li - Tax Manager<br>CA, BCom & Dip Financial Planning</h3>
+                        <p>Peter is a chartered accountant with more than 15 years' experience in chartered accounting firms, primarily but not exclusively covering all aspects of accounting, taxation advice, general business advice and self managed superannuation funds (SMSFs).</p>
+                        <p>Peter’s expertise covers advice to a diverse portfolio of clients ranging from small to medium sized privately owned businesses, ultra-high-net-worth individuals, professionals, lawyers, doctors, dentists and not-for-profit entities.</p>
+                        <p>He also has extensive experience in SMSF and structured investments for large family groups and provides solutions-based advice on tax structure, performance, and tax minimisation strategies.</p>
+                        <p>Peter's practical experience is enhanced with a postgraduate completion of the Chartered Accountants program in 2014. He also completed Diploma of Financial Planning (RG146 compliant) and graduated from the University of Sydney with a Bachelor of Business, majoring in Accounting and Finance.</p>
+
+                        <div class="section-management-team-horizontal-line"></div>
+                        <h3>Grace Lee (Senior Accountant & General Legal Advisor - Tax)<br>J.D., B.Com</h3>
+                        <!-- <p>Grace is a senior accountant and general legal advisor at BG Financial Group . She has wide raining experience in all facets of the business and individual accounting to be able to deliver great results for customers.</p>
+                        <p>In her role as a General Legal Advisor, she is focused on supporting clients regarding all tax related legal matters such as main residence exemption, payroll tax, and business entity setups.</p>
+                        <p>Grace applies her specific expertise and years' of experience to ensure the best possible outcomes for every client by maintaining the firm’s reputation for providing high-quality services.</p>
+                        <p>Grace has excellent attention to detail and always aims to exceed client expectations. With her thorough knowledge and specialisation of Bare Trusts, SMSFs and all tax related legal matters, Grace has become a key player in BG Financial Group.</p>
+                        <p>Working directly to senior management when joining BGF, Grace absorbed and acquired a great understanding of the tax law and commercial insights. She is fully intuned to the management style that would be the envy of any business professional. Through her work with key management members at BGF and external specialists throughout her career, Grace has developed a diverse range of skills as well as in-depth commercial, technical and legal knowledge.</p> -->
+                        <p>Grace is a senior accountant and general legal advisor at BG Financial Group . She has wide ranging experience and is able to deliver great results for customers.</p>
+                        <p>In her role as a General Legal Advisor, she is focused on supporting clients with all tax related legal matters such as main residence exemption, payroll tax, and business entity setups.</p>
+                        <p>Grace applies her specific expertise and years' of experience to ensure the best possible outcomes for every client by maintaining the firm’s reputation for providing high-quality services.</p>
+                        <p>Grace has excellent attention to detail and always aims to exceed client expectations. With her thorough knowledge and specialisations of Bare Trusts, SMSFs and all tax related legal matters. Grace has become a key member of the BG Financial Group team.</p>
+                        <p>Working directly with senior management, Grace has an excellent understanding of tax law and commercial law. Through her work with both senior management and external specialists, Grace has developed a diverse range of skills as well as in-depth commercial, technical and legal knowledge.</p>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </main>
+
+<!-- End of class .site-content-wrapper. Place this ahead of the <footer></footer> to ensure the <footer></footer> is pushed to the bottom of screen on pages with mot much content. -->
+</div>
+<!-- End of class .site-content-wrapper. Place this ahead of the <footer></footer> to ensure the <footer></footer> is pushed to the bottom of screen on pages with mot much content. -->
+
+<footer>
+    <div class="footer-bar">
+        <address>
+            <div><span class="material-symbols-outlined" >local_post_office</span><br>Suite 59, Level 11<br>88 Pitt Street,<br>Sydney NSW 2000</div>
+        </address>
+        <div>
+            <span class="material-icons">phone</span><br>
+            <div style="padding-top:8px;"><a href="tel:+61292219393" style="color:rgb(230,240,255);"><b>T </b>+61 02 9221 9393</a></div>
+            <div style="padding-top:8px;"><a href="tel:+61292219393" style="color:rgb(230,240,255);"><b>F </b>+61 02 8076 3050</a></div>
+            <!-- <span class="material-icons"></span><br><a href="tel:+61292219393" style="color:rgb(230,240,255)"><b>M </b>+61 04 6680 6819</a> -->
+        </div>
+        <div>
+            <span class="material-icons">mail</span><br><a href="mailto:info@bgfinancial.net.au" style="color:rgb(230,240,255)">info@bgfinancial.net.au</a>
+        </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.5);">
+        <p>BG Financial Group Pty Ltd (ACN 609 307 208) is a corporation for the purposes of the Corporations Act 2001.  Liability limited by a Scheme approved under Professional Standards Legislation.</p>
+        <div id="copyright-notice"></div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.5);">
+        <i>
+            <p>Acknowledgement of Country</p>
+            <p>We acknowledge the traditional owners and custodians of country throughout Australia and acknowledge their continuing connection to land, waters and community. We pay our respects to the people, the cultures and the elders past, present and emerging.</p>
+        </i>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.5);text-align:right;"><a href="https://netit.com.au" target="_blank" style="padding:5px;color:grey;font-size:0.8rem;">Web Site by Net IT Australia</a></div>
+</footer>
+
+<div id = "clientOS" style="background-color:chartreuse" class="no-show"></div>
+
+<!-- <div id="ticker-tape-animation" class="ticker-tape-animation"> -->
+    <!-- &#10097&#10097 important news update 1 &#10097&#10097 important news update 2 &#10097&#10097 important news update 3 &#10097&#10097 important news update 4 -->
+<!-- </div> -->
+
+<!-- <div id="ato-links" class="ato-links">
+    <ul>
+        <li><a href="https://www.ato.gov.au/Rates/Individual-income-tax-rates/" title="Individual Income Tax Rates" target="_blank">Tax Tables</a></li>
+        <li><a href="https://www.ato.gov.au/tax-professionals/prepare-and-lodge/due-dates/" title="Tax return due dates" target="_blank">Tax due dates</a></li>
+        <li><a href="https://www.ato.gov.au/Individuals/Jobs-and-employment-types/Working-as-an-employee/Leaving-your-job/Employment-termination-payments/" title="Eligible Termination Payments" target="_blank">Termination Payments</a></li>
+        <li><a href="https://www.ato.gov.au/Individuals/Deceased-estates/" title="Deceased Estates - ATO" target="_blank">Deceased Estates</a></li>
+        <li><a href="https://www.ato.gov.au/Calculators-and-tools/Medicare-levy/" title="Medicare Levy calculator" target="_blank">Medicare Levy</a></li>
+        <li><a href="https://www.ato.gov.au/Calculators-and-tools/" title="Calculators and tools" target="_blank">Calculators and tools</a></li>
+        <li><a href="https://www.ato.gov.au/Forms/Searching-for-lost-super/" title="Find your lost Super" target="_blank">Find your lost Super</a></li>
+        <li><a href="https://www.ato.gov.au/Individuals/Tax-file-number/" title="Tax File Numbers - ATO" target="_blank">Tax File Numbers</a></li>
+        <li><a href="https://www.ato.gov.au/business/business-activity-statements-(bas)/" title="Business Activity Statements - ATO" target="_blank">BAS Reporting</a></li>
+    </ul>
+</div> -->
+
+<!-- <script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "beta"});
+</script> -->
+
+</body>
+</html>
