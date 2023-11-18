@@ -508,10 +508,11 @@ section{
     /* border-top:2px solid navy; */
 
     /* color:white; */
-    /* background-image:linear-gradient(45deg,lightskyblue,blue,lightskyblue); */
+    /* background-image:linear-gradient(45deg,lightskyblue,skyblue,lightskyblue); */
+    /* border-radius: 10px; */
     padding:20px;
-    border:1px solid grey;
-    box-shadow: 2px 10px 5px grey;
+    /* border:1px solid grey; */
+    /* box-shadow: 2px 10px 5px grey; */
 
 }
 .section-welcome ul{
@@ -682,9 +683,9 @@ section{
 
     margin:10px;
     padding:20px;
-    border:1px solid navy;
-    border-radius:15px;
-    box-shadow: 2px 2px;
+    /* border:1px solid navy; */
+    /* border-radius:15px; */
+    /* box-shadow: 2px 2px; */
 
     /* -webkit-border-image: 1 px solid navy; */
     /* border-image: linear-gradient(#f6b73c, #4d9f0c) 30; */
@@ -984,10 +985,10 @@ section{
     color:black;
     margin:10px;
     padding:20px;
-    border:1px solid navy;
-    border-radius:15px;
-    -webkit-border-radius:15px;
-    box-shadow: 2px 2px;
+    /* border:1px solid navy; */
+    /* border-radius:15px; */
+    /* -webkit-border-radius:15px; */
+    /* box-shadow: 2px 2px; */
     /* background-color: rgba(135,205,235,0.3); */
 
 }
