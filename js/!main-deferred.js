@@ -119,3 +119,45 @@ function calcHeaderHeight(){
 // calcHeaderHeight();
 // window.location.reload();
 // alert("loaded");
+
+
+window.addEventListener("load",  (event) => {
+
+    var myBody = document.getElementsByTagName("BODY")[0];
+    myBody.addEventListener("mousemove",(event)=>{
+        logSiteVisit();
+    },{once: true});
+    myBody.addEventListener("touchstart",(event)=>{
+        logSiteVisit();
+    },{once: true});
+    function logSiteVisit(){
+        console.log("mousemove detected");
+        // // GEOLOCATION start
+        //     function getLocation() {
+        //         if (navigator.geolocation) {
+        //             navigator.geolocation.getCurrentPosition(showPosition);
+        //         } else {
+        //             // x.innerHTML = "Geolocation is not supported by this browser.";
+        //             console.log("Geolocation is not supported by this browser.");
+        //         }
+        //     }
+        //     getLocation();
+        //     function showPosition(position) {
+        //         // x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+        //         console.log("Latitude: " + position.coords.latitude + "\nLongitude: " + position.coords.longitude);
+        //     }
+        // // GEOLOCATION end
+        // IPADDRESS start
+            // // external source START
+            //     fetch('https://api.ipify.org/?format=json')
+            //     .then(res => res.json())
+            //     .then(data => console.log(data.ip))
+            //     .catch(err => console.log(err))
+            // // external source END
+            // mySERVER start
+                fetch('https://netit.com.au/myIPify_BGF');
+            // mySERVER end
+        // IPADDRESS end
+        // triggerSiteVisit();
+    }
+});
