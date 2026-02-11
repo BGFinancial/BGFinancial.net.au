@@ -1,4 +1,4 @@
-window.consoleLog = false;
+window.consoleLog = true;
 
 const now = new Date()
 const localString = new Intl.DateTimeFormat(
@@ -354,6 +354,21 @@ document.addEventListener("DOMContentLoaded",async () => {
                             });
                         });
                     // 🦻 automate nav on 📲 mobile 📲 devices 📲 END
+
+                    // 🚨 process nav link clicks 🚨 START
+                        document.addEventListener("click", (event) => {
+                            // const link = event.target.closest('a');
+                            const link = event.target.closest('label');
+                            if (link) {
+                                if(window.consoleLog===true){console.log(link.innerText);}
+                                // const target = new URL(link.href).pathname;
+                                const target = link.innerText.replace(" ","-");
+                                if(window.consoleLog===true){console.log(target);}
+                                    const navSite = "bgfinancial.net.au";
+                                    navigator.sendBeacon(`https://netit.com.au/api/stats/${navSite}/${target}`);
+                            }
+                        });
+                    // 🚨 process nav link clicks 🚨 END
 
                 // Add event listeners END   🦻🦻🦻 ===================
 
