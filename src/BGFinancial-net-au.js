@@ -1,5 +1,6 @@
-window.consoleLog = false;
+window.consoleLog = true;
 const navSite = window.location.hostname || "bgfinancial.net.au"
+if(window.consoleLog===true){console.log(`navSite`,navSite);}
 const serverURL = "https://netit.com.au";
 let pageLoadTime = 0;
 let timeOnPage = 0;
@@ -286,46 +287,76 @@ console.log(localString)
                     const targetTxt = navTarget.startsWith("/") ? navTarget.substring(1) : navTarget;
                     if(window.consoleLog===true){console.log("🚨",navTarget.slice(0,1));}
                     if(window.consoleLog===true){console.log("🚨",targetTxt);}
-                    // Fires off a "fire and forget" request to your backend
-                        const myDate = new Date()
-                        const myData = JSON.stringify({
-                            viewportWidth: window.innerWidth,
-                            viewportHeight: window.innerHeight,
-                            screenWidth: window.screen.width,
-                            screenHeight: window.screen.height,
-                            browserTimestampUTC: myDate.toISOString(),
-                            browserTimestampLocal: myDate.toLocaleString(),
-                            browserTimeSinceUnixEpoch: myDate.getTime(),
-                        });
-                        if(window.consoleLog===true){"🚨",console.log(myData);}
-                        const myBlob = new Blob([myData], { type: 'application/json' });
+                    // // Fires off a "fire and forget" request to your backend
+                    //     const myDate = new Date()
+                    //     const myData = JSON.stringify({
+                    //         viewportWidth: window.innerWidth,
+                    //         viewportHeight: window.innerHeight,
+                    //         screenWidth: window.screen.width,
+                    //         screenHeight: window.screen.height,
+                    //         browserTimestampUTC: myDate.toISOString(),
+                    //         browserTimestampLocal: myDate.toLocaleString(),
+                    //         browserTimeSinceUnixEpoch: myDate.getTime(),
+                    //     });
+                    //     if(window.consoleLog===true){"🚨",console.log(myData);}
+                    //     // const myBlob = new Blob([myData], { type: 'application/json' });
                         const ref = encodeURIComponent(document.referrer || 'direct'); // document.referrer is a full URL. If a user comes from a URL with special characters (like ? or &), it will break your sendBeacon string. You should wrap any string-based variables in encodeURIComponent().
-                        const path = encodeURIComponent(targetTxt);
-                        // navigator.sendBeacon(`${SERVER_URL}/api/stats/${navSite}/${targetTxt}/${window.innerWidth}/${window.innerHeight}?devPixRat=${window.devicePixelRatio}&referrer=${document.referrer}&timeOnPage=${timeOnPage}`);
-                        navigator.sendBeacon(`${serverURL}/api/stats/${navSite}/${path}/${window.innerWidth}/${window.innerHeight}/${window.screen.width}/${window.screen.height}?devPixRat=${window.devicePixelRatio}&referrer=${ref}&timeOnPage=${timeOnPage}`);
+                        const navPath = encodeURIComponent(targetTxt || '');
+                        // // navigator.sendBeacon(`${SERVER_URL}/api/stats/${navSite}/${targetTxt}/${window.innerWidth}/${window.innerHeight}?devPixRat=${window.devicePixelRatio}&referrer=${document.referrer}&timeOnPage=${timeOnPage}`);
+                        // navigator.sendBeacon(`${serverURL}/api/stats/${navSite}/${path}/${window.innerWidth}/${window.innerHeight}/${window.screen.width}/${window.screen.height}?devPixRat=${window.devicePixelRatio}&referrer=${ref}&timeOnPage=${timeOnPage}`);
+                    const payload = {
+                        navSite,
+                        navPath,
+                        innerWidth: window.innerWidth,
+                        innerHeight: window.innerHeight,
+                        screenWidth: window.screen.width,
+                        screenHeight: window.screen.height,
+                        devicePixelRatio: window.devicePixelRatio,
+                        referrer: ref,
+                        timeOnPage
+                    };
+                    if(window.consoleLog===true){console.log("🚨 sendBeacon payload:-\n",payload);}
+                    const blob = new Blob(
+                        [JSON.stringify(payload)],
+                        { type: "application/json" } // use type: "text/plain" if necessary but still need to parse it as JSON at the server
+                    );
+                    const success = navigator.sendBeacon(
+                        `${serverURL}/api/stats`,
+                        blob
+                    );
+                    if (!success) {
+                        if(window.consoleLog===true){console.log("🚨 Beacon failed to queue.");}
+                    }else{
+                        if(window.consoleLog===true){console.log("🚨 Beacon sent to queue successfully.");}
+                    }
                 }
             // 🚨 navigator.sendBeacon() 🚨 END
-                const isVisibleAtLoad = !document.hidden;
-                if(isVisibleAtLoad===true){
+                if(!document.hidden===true){
                     pageLoadTime = Date.now();
                     sendBeaconEvent("/site-load");
                 }
-                window.addEventListener("unload", (event) => {
-                    sendBeaconEvent("/site-unload");
-                });
                 window.addEventListener("pagehide", (event) => {
-                    sendBeaconEvent("/site-pagehide");
-                });
-                window.addEventListener("beforeunload", (event) => {
-                    sendBeaconEvent("/site-beforeunload");
-                });
-                window.addEventListener("visibilitychange", (event) => {
-                    if(document.hidden===true){
-                        sendBeaconEvent("/site-visibilitychange-hidden");
+                    if (!event.persisted) {
+                        sendBeaconEvent("/site-pagehide");
                     }
+                });
+                window.addEventListener("visibilitychange", (event) => { // visibilitychange fires before pagehide
                     if(document.hidden===false){
                         pageLoadTime = Date.now();
                         sendBeaconEvent("/site-visibilitychange-visible");
+                    }
+                });
+                window.addEventListener('pageshow', (event) => {
+                    if (event.persisted) {
+                        // Always re-initialise UI state
+                            // Rebind menu click handlers
+                            // Reset menu open/closed state
+                            // Restart timers if needed
+                        const navToggle = document.getElementById("nav-toggle");
+                        if(navToggle.checked){
+                            console.log("pageshow, navToggle set to false");
+                            navToggle.checked = false;
+                        }
                     }
                 });
         // 🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨 END 🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨
